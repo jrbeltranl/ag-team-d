@@ -1,4 +1,4 @@
-export const trainingDataTypeDef = `
+export const dataTypeDef = `
   type trainingData {
       Category: String!
       Label: String!
@@ -12,32 +12,27 @@ export const trainingDataTypeDef = `
       category: String!
       label: String!
       url: String!
-  }`;
-
-export const trainingDataQueries = `
-      allTrainingData: trainingDataResponse!
-  `;
-
-export const trainingDataMutations = `
-    createTrainingData(trainingData: trainingDataInput!): trainingData!
-`;
-
-export const userTypeDef = `
+  }
   type user {
     id: Int!
     nombre: String!
     edad: Int!
     correo: String!
-    contraseña: String!
     nivelconocimientolenguaje: String!
     ciudad: String!
     niveleducativo: String!
   }
+  `;
+
+export const dataQueries = `
+    allTrainingData: trainingDataResponse!
+    allUserData: [user!]
+  `;
+
+export const dataMutations = `
+    createTrainingData(trainingData: trainingDataInput!): trainingData!
 `;
 
-export const userQueries = `
-      allUserData: [user!]
-  `;
 
 
 

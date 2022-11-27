@@ -8,9 +8,7 @@ const userMsURL = `https://${userUrl}:${userPort}/${userEntryPoint}`;
 const resolvers = {
 	Query: {
 		allTrainingData: (_) =>
-			getRequest(imageDataMsURL, '')
-	},
-	Query: {
+			getRequest(imageDataMsURL, ''),
 		allUserData: (_) =>
 			getRequest(userMsURL,'')
 	},
