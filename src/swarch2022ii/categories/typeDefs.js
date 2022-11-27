@@ -1,9 +1,8 @@
 export const trainingDataTypeDef = `
   type trainingData {
-      category: String!
-      label: String!
-      url: String!
-      id: String!
+      Category: String!
+      Label: String!
+      Url: String!
   }
   type trainingDataResponse{
     status: String!
