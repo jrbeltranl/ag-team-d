@@ -11,5 +11,6 @@ RUN npm install
 COPY . /dasann_ag/
 RUN npm run prepublish
 RUN npm set strict-ssl false = false
+RUN apt-get install openssl
 
 CMD [ "npm", "run", "runServer" ]
