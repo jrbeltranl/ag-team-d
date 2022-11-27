@@ -7,16 +7,25 @@ import { mergeSchemas } from './utilities';
 import {
 	trainingDataMutations,
 	trainingDataQueries,
-	trainingDataTypeDef
+	trainingDataTypeDef,
+	userTypeDef,
+	userQueries
 } from './swarch2022ii/categories/typeDefs';
 
-import trainingDataResolvers from './swarch2022ii/categories/resolvers';
+import dataResolvers from './swarch2022ii/categories/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		trainingDataTypeDef
+	],
+	[ 
+		'scalar JSON',
+		userTypeDef
+	],
+	[
+		userQueries
 	],
 	[
 		trainingDataQueries
@@ -31,6 +40,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		trainingDataResolvers
+		dataResolvers,
 	)
 });

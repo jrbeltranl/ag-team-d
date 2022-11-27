@@ -1,17 +1,22 @@
 import { generalRequest, getRequest } from '../../utilities';
-import { firebaseFunctionUrl, trainingDataEntryPoint } from './server';
+import { firebaseFunctionUrl, trainingDataEntryPoint, userUrl, userPort, userEntryPoint } from './server';
 
-const URL = `https://${firebaseFunctionUrl}/${trainingDataEntryPoint}`;
-console.log(URL);
+const imageDataMsURL = `https://${firebaseFunctionUrl}/${trainingDataEntryPoint}`;
+const userMsURL = `https://${userUrl}:${userPort}/${userEntryPoint}`;
+
 
 const resolvers = {
 	Query: {
 		allTrainingData: (_) =>
-			getRequest(URL, '')
+			getRequest(imageDataMsURL, '')
+	},
+	Query: {
+		allUserData: (_) =>
+			getRequest(userMsURL,'')
 	},
 	Mutation: {
 		createTrainingData: (_, { trainingData }) =>
-			generalRequest(`${URL}/`, 'POST', trainingData)
+			generalRequest(`${imageDataMsURL}/`, 'POST', trainingData)
 	}
 };
 

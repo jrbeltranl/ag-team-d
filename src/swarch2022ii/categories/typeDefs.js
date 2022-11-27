@@ -22,3 +22,22 @@ export const trainingDataMutations = `
     createTrainingData(trainingData: trainingDataInput!): trainingData!
 `;
 
+export const userTypeDef = `
+  type user {
+    id: Int!
+    nombre: String!
+    edad: Int!
+    correo: String!
+    contraseña: String!
+    nivelconocimientolenguaje: String!
+    ciudad: String!
+    niveleducativo: String!
+  }
+`;
+
+export const userQueries = `
+      allUserData: [user!]
+  `;
+
+
+
