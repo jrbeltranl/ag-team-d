@@ -5,6 +5,10 @@ export const trainingDataTypeDef = `
       url: String!
       id: String!
   }
+  type trainingDataResponse{
+    status: String!
+    data: [trainingData!]
+  }
   input trainingDataInput {
       category: String!
       label: String!
@@ -12,7 +16,7 @@ export const trainingDataTypeDef = `
   }`;
 
 export const trainingDataQueries = `
-      allTrainingData: [trainingData]!
+      allTrainingData: trainingDataResponse!
   `;
 
 export const trainingDataMutations = `
