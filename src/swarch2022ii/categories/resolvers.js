@@ -2,7 +2,7 @@ import { generalRequest, getRequest } from '../../utilities';
 import { firebaseFunctionUrl, trainingDataEntryPoint, userUrl, userPort, userEntryPoint } from './server';
 
 const imageDataMsURL = `https://${firebaseFunctionUrl}/${trainingDataEntryPoint}`;
-const userMsURL = `https://${userUrl}:${userPort}/${userEntryPoint}`;
+const userMsURL = `http://${userUrl}:${userPort}/${userEntryPoint}`;
 
 
 const resolvers = {
